@@ -12,29 +12,26 @@
 
 <div class="navbar navbar-fixed-top">
 
-   <div class="container"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+    <div class="container"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
 
-    <a class="navbar-brand" href="#">AA+</a>
-    <div class="nav-collapse navbar-responsive-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Portfolio</h3></a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div></div>
+        <a class="navbar-brand" href="#">AA+</a>
+        <div class="nav-collapse navbar-responsive-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="todoList.html">Portfolio</h3></a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div></div>
 </div>
 
-<body>
+<body ng-controller="mycontroller">
 
 <div class="container">
-
-
-
 
     <div id="homeCarousel" class="carousel slide container">
         <ol class="carousel-indicators">
@@ -76,14 +73,24 @@
         </a>
     </div>
 
-    <div class="row">
-        <div class="col-lg-4 thumbnail"><div class="caption"><h3>A quick summary</h3>
-            <p>I'd like to put something here that gives some quick and simple information.</p></div> </div>
-        <div class="col-lg-4 thumbnail"><div class="caption"><h3>A quick summary</h3>
-            <p>I'd like to put something here that gives some quick and simple information.</p></div> </div>
-        <div class="col-lg-4 thumbnail"><div class="caption"><h3>A quick summary</h3>
-            <p>I'd like to put something here that gives some quick and simple information.</p></div> </div>
+    <div id="mainC" class="container">
+        <div id="mainLeft" class="col-lg-8">
+            <div class="list-group">
+                <div class="list-group-item" ng-repeat="post in BlogList">
+                    <h3 class="list-group-item-heading">{{ post.blogTitle }}</h3>
+                </div>
+
+                <p class="list-group-item-text">{{ post.blogContent }}</p>
+            </div>
+
+        </div>
+        <div id="mainRight" class="col-lg-3 col-12 col-sm-12">
+
+        </div>
+
+
     </div>
+
 
 </div>
 

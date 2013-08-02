@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Todo">
+<head>
+    <title>Angular Todo with Firebase!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-glyphicons.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-controller="todoController">
+
+<div id="main" class="container">
+
+    <div class="row" id="HeaderRow">
+        <form name="todoForm" ng-submit="save()" novalidate>
+            <div class="col-lg-4 col-sm-4 col-6 col-offset-3">
+                <input type="text" class="form-control pull-left" ng-model="myTask" placeholder="Add a new task here" ng-minlength="3" ng-maxlength="15" required/>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-2">
+                <button type="button" class="btn glyphicon glyphicon-plus" ng-click="save()"> Add Item</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="list-group">
+        <a href="#" class="list-group-item" ng-repeat="todo in todoList" ng-dblclick="edit(todo)">
+            <h3 class="list-group-item-heading" ng-hide="todo.inEdit == true">
+                {{todo.title}} <button type="button" class="close glyphicon glyphicon-fire" ng-click="delete(todo)"></button>
+            </h3>
+            <form name="editTodoForm" ng-submit="updateTodo(todo)" novalidate>
+            <input type="text" ng-model="todo.title" placeholder="{{ todo.title }}" class="form-control" ng-hide="todo.inEdit == false" todo-focus="todo.inEdit == true" todo-blur="cancelEdit(todo)">
+            </form>
+            <p class="list-group-item-text">{{todo.title + " " + "Della"}}</p>
+        </a>
+    </div>
+
+    <h2>{{myTask}}</h2>
+</div>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script type="text/javascript" src="js/angularFire.js"></script>
+<script type="text/javascript" src="js/Todo.js"></script>
+<script type="text/javascript" src="js/todoController.js"></script>
+<script type="text/javascript" src="js/todoFocus.js"></script>
+<script type="text/javascript" src="js/todoBlur.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

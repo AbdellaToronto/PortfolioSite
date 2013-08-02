@@ -8,12 +8,13 @@ body{
     max-width:1200px;
     max-height: 360px;
     overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
 .navbar{
-    border-bottom: 2px #9a9a9a solid;
-    background-color: #3F62AA;
+    background-color: #6448aa;
 }
 
 .navbar-brand{
@@ -25,7 +26,28 @@ body{
 }
 
 
-.thumbnail{
-    border-bottom: 2px #9a9a9a solid;
-    border-right: 2px #9a9a9a solid;
+#mainC{
+    height: 500px;
+}
+
+#mainLeft{
+    height: 500px;
+    background-color: #dadada;
+
+}
+
+#mainRight{
+    height: 500px;
+    background-color: #dadada;
+    float:right;
+}
+
+#HeaderRow{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.close:hover{
+    color:#D62222;
 }
