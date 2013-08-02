@@ -6,4 +6,4 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Todo = angular.module('DellaWeb', ['firebase']);
+var DellaWeb = angular.module('DellaWeb', ['firebase']);

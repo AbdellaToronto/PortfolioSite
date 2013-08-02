@@ -11,11 +11,11 @@ DellaWeb.controller('mycontroller', ['$scope', 'angularFire',
 
     function mycontroller($scope, angularFire) {
 
-        var url = "https://dellas.firebaseio.com/della"; //url of todolist at firebase
-        var promise = angularFire(url, $scope, 'todoList'); //promise, last argument is referencing the firebase model
+        var url = "https://dellas.firebaseio.com/della"; //url at firebase
+        var promise = angularFire(url, $scope, 'futureModel'); //promise, last argument is referencing the firebase model
 
 
-        promise.then(function (todoList) {
+        promise.then(function (futureModel) {
 
         })
     }
