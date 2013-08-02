@@ -1,0 +1,30 @@
+body{
+    background-image: url("../images/rough_diagonal.png");
+    font-family: 'Roboto', sans-serif!important;
+}
+
+#homeCarousel{
+    max-width:1200px;
+    max-height: 360px;
+    overflow: hidden;
+}
+
+
+.navbar{
+    background-image: url("../images/textured_paper.png");
+    border-bottom: 2px #9a9a9a solid;
+    border-right: 2px #9a9a9a solid;
+}
+.navbar-nav>li>a:hover{
+    color: white;
+}
+
+.navbar-nav>li>a{
+    color: black;
+}
+
+.thumbnail{
+    background-image: url("../images/textured_paper.png");
+    border-bottom: 2px #9a9a9a solid;
+    border-right: 2px #9a9a9a solid;
+}
