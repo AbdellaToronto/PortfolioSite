@@ -16,8 +16,16 @@ DellaWeb.controller('mycontroller', ['$scope', 'angularFire',
 
 
         promise.then(function (BlogList) {
+            $scope.save = function () {    //when you click the save button
+                $scope.BlogList.push({
+                    blogTitle: $scope.newBlogTitle,
+                    blogContent: $scope.newBlogContent
+                });
+            };
 
+            $scope.newBlog = function(){
 
+            }
         })
     }
 ]);

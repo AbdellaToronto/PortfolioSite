@@ -73,12 +73,22 @@
         </a>
     </div>
 
-    <div id="mainC" class="container">
+    <div id="mainC" class="container" ng-init="blogCount = 0">
         <div id="mainLeft" class="col-lg-8">
+            <button type="button" class="btn glyphicon glyphicon-plus" ng-click="blogCount++"></button>
+            <form name="newBlogForm" ng-hide="blogCount > 0">
+                <input type="text" id="newBlogTitle" class="form-control">
+                <textarea id="newBlogContent" class="form-control"></textarea>
+            </form>
+
             <div class="list-group">
-                <div class="list-group-item" ng-repeat="post in BlogList">
+                <div class="list-group-item blogPost" ng-repeat="post in BlogList">
                     <h3 class="list-group-item-heading">{{ post.blogTitle }}</h3>
-                    <p class="list-group-item-text">{{ post.blogContent }}</p>
+                    <p class="list-group-item-text blogCont">{{ post.blogContent }}</p>
+
+                    <form name="editBlogPost" ng-submit="updateTodo(todo)" novalidate>
+                        <input type="text" ng-model="todo.title" placeholder="{{ todo.title }}" class="form-control" ng-hide="todo.inEdit == false" todo-focus="todo.inEdit == true" todo-blur="cancelEdit(todo)">
+                    </form>
                 </div>
 
 
@@ -86,6 +96,10 @@
 
         </div>
         <div id="mainRight" class="col-lg-3 col-12 col-sm-12">
+                 <div id="practiceCircle">
+
+                 </div>
+
 
         </div>
 
@@ -105,6 +119,8 @@
 <script type="text/javascript" src="js/DellaWeb.js"></script>
 <script type="text/javascript" src="js/mycontroller.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotateCompressed.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/della.js"></script>
 </body>
 </html>
